@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supply–Demand Input</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+    label { display: block; margin-top: 0.75rem; font-weight: 500; }
+    select, input { width: 100%; padding: 0.4rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button { margin-top: 1.25rem; padding: 0.5rem 1rem; cursor: pointer; }
+    #status { margin-top: 1rem; padding: 0.5rem 0.75rem; background: #e8f4f8; border: 1px solid #b0d4e0; border-radius: 4px; min-height: 1.5em; font-size: 0.9rem; }
+    #result { margin-top: 0.75rem; padding: 1rem; border: 1px solid #ccc; border-radius: 4px; min-height: 120px; overflow-y: auto; background: #fafafa; }
+    #result.error { background: #fdd; border-color: #c00; }
+    #result:empty::before { content: "Results will appear here after you click Calculate."; color: #888; }
+    table { border-collapse: collapse; margin: 0.5rem 0; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 0.35rem 0.5rem; text-align: left; }
+    th { font-weight: 600; background: #eee; }
+    .results-section { margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Supply–Demand Input</h1>
+  <form id="input-form">
+    <label for="center">Center</label>
+    <select id="center" name="center">
+      <option value="">— Select —</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <label for="dr1">DR1</label>
+    <select id="dr1" name="dr1">
+      <option value="">— Select —</option>
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+      <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option>
+      <option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>
+    </select>
+    <label for="dr2">DR2</label>
+    <select id="dr2" name="dr2">
+      <option value="">— Select —</option>
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+      <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option>
+      <option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>
+    </select>
+    <label for="ua">UA</label>
+    <select id="ua" name="ua">
+      <option value="">— Select —</option>
+      <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option>
+      <option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option>
+      <option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>
+    </select>
+    <label for="bloodtype">Bloodtype</label>
+    <select id="bloodtype" name="bloodtype">
+      <option value="">— Select —</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <button type="submit" id="btn-calculate">Calculate</button>
+  </form>
+  <section class="results-section" aria-label="Results">
+    <h2>Status</h2>
+    <div id="status" aria-live="polite">Idle. Select all fields and click Calculate.</div>
+    <h2>Output</h2>
+    <div id="result" aria-live="polite"></div>
+  </section>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
